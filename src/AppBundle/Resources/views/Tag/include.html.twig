@@ -1,0 +1,10 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Tag:include{% endblock %}
+
+{% block body %}
+<h1>Welcome to the Tag:include page</h1>
+{%include 'AppBundle:Tag:include2.html.twig' with {login:'helene', email:'helene.chaumette@gmail.com'}%}
+{%include 'AppBundle:Tag:include2.html.twig' with {login:'Warsa', email:'warsa@gmail.com'}%}
+{%include 'AppBundle:Tag:miniature.html.twig' with {livre: book}%}
+{% endblock %}

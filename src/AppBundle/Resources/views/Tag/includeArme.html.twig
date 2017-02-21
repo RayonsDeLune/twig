@@ -1,0 +1,5 @@
+Produit actuel: {{ produit.titre }}
+        Prix: {{ produit.prix }}
+        {% for catAct in produit.categories %}
+            Catégorie: {{ catAct.titre }}
+        {% endfor %}

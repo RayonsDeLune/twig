@@ -1,0 +1,11 @@
+
+<h2>Liste Produits</h2>
+<table>
+{% for produit in produits %}
+    <tr>
+        <td>{{ produit.titre }}</td>
+        <td class="prix">{{ produit.prix |number_format(2,'.',' ') }} €</td>
+        <td><button onclick='$.get("{{ path('ajax_sup_prod', {id:produit.id}) }}",callBackSup);'>Supprimer</button></td>
+    </tr>
+{% endfor %}
+</table>

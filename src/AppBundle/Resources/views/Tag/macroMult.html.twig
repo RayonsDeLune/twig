@@ -1,0 +1,8 @@
+{% macro tableMultiplication(largeur, min, max) %}
+    {% for i in min..max %}
+        {% for cpt in 1..largeur %}
+            {{ i * cpt }} -- 
+        {% endfor %}
+        <br/>
+    {%endfor%}
+{% endmacro %}

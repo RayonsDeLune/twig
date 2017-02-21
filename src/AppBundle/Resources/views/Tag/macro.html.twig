@@ -1,0 +1,18 @@
+{% import 'AppBundle:Tag:macroMult.html.twig' as mult %}
+
+{% set foo %}
+    <div>
+        blablabla blablabla
+    </div>
+{% endset %}
+
+{{ mult.tableMultiplication(7,5,10) }}
+
+{{ "J'aime ça et ceci "|replace({'ça':'le chocolat', 'ceci':'le fromage'}) }}
+<br/>
+<br/>
+{{foo}}
+<br/>
+{{foo}}
+<br/>
+{{foo}}

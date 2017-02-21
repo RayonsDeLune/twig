@@ -1,0 +1,7 @@
+{% block body %}
+        {% embed 'AppBundle:Tag:lister_produits.html.twig' with {products:mesProduits}  %}
+            {% block titre %}
+                <h2>Armes prestigieuses</h2>
+            {% endblock %}
+        {% endembed %}
+{% endblock %}

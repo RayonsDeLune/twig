@@ -1,0 +1,124 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14 déc. 2016, 16:22:35
+    Author     : Formation
+*/
+
+@font-face {
+    font-family: 'amarillo';
+    src: url('../font/amarillo/Amarillo.ttf') ;
+}
+
+h1
+{
+    font-family: amarillo;
+    font-size : 2em;
+    text-align: center;
+    color:black;
+    /*opacity:1;*/
+}
+
+
+td.prix
+{
+    text-align: right;
+}
+
+header
+{
+
+    border:1px solid #999;
+    border-radius:8px;
+    box-shadow:0 0 10px black;
+    margin-top:20px;
+/*    background-color : black;
+    color : white;*/
+    width:90%;
+    height : 12em;
+    background-image: url('../img/oriental3-tr.jpg');
+    /*opacity: 0.5;*/
+    text-shadow: 2px 2px 8px #ff0000;
+    position: relative;
+}
+body
+{
+    background-image: url('../img/fondOriental1.jpg');
+    font: 1em verdana, sans-serif;
+    background-attachment: fixed;
+    width:100%;
+}
+article
+{
+
+    border:1px solid #999;
+    border-radius:8px;
+    box-shadow:0 0 10px black;
+    margin-top:20px;
+    background-color : white;
+    color : black;
+    padding:10px;
+    padding-top: 0px;
+    width : 90%;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: justify;
+}
+h2
+{
+    font-family: amarillo;
+    font-size : 1.5em;
+    color:black;
+}
+
+label
+{
+    display : inline-block;
+                width : 150px;
+                margin:10px;
+                vertical-align: top;
+}
+input
+{
+    margin-top:10px;
+}
+textarea
+{
+    margin-top:10px;
+}
+
+article a
+{
+    text-decoration:none;
+    color: #227c73;
+}
+
+article a:hover
+{
+    color:#ff45fc;
+}
+
+
+
+footer
+{
+    background-color: rgba(255, 255, 255, 0.6);
+    border:1px solid #999;
+    border-radius:8px;
+    box-shadow:0px 0px 10px black;
+    padding:10px;
+    margin-top:20px; 
+}
+footer a
+{
+    text-decoration:none;
+    color: #227c73;
+}
+
+footer a:hover
+{
+    color:#ff45fc;
+}
+

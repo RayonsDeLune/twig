@@ -1,0 +1,13 @@
+
+
+{% block titre %}
+    <h1>{{title}}</h1>
+{% endblock %}
+{% block produits %}
+    {% for prodAct in products %}
+        <div style="background-color:{{ cycle(["lightgrey", "plum", "white"], loop.index) }}">
+        {% include 'AppBundle:Tag:includeArme.html.twig' with {produit:prodAct} %}
+        </div>
+        <br>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "::base.html.twig" %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        function callBackAjoutProd(reponseDuServeur)
+            {
+                //$('#cible').html(reponseDuServeur);
+                clickBouton();
+                // vider les champs du formulaire
+                $('#appbundle_produit_titre').val('');
+                $('#appbundle_produit_description').val('');
+            }
+        function ajouterProd()
+            {
+                $.post("{{ path("ajax_ajouter_prod") }}", $('form').serialize(), callBackAjoutProd());
+
+            }
+        function callBackSup(reponseDuServeur)
+            {
+                $('#cible').html(reponseDuServeur);
+                //clickBouton();
+            }
+
+        function clickBouton()
+            {
+                $('#cible').load('{{ path("ajax_listerProduits") }}');
+            }
+
+        $(function ()
+            {
+                $('#boutonGET').on('click', function ()
+                    {
+                        $.get('{{ path("armesFamiliales") }}',
+                                function (data)
+                                    {
+                                        $('#cible').html(data);
+                                    });
+                    });
+
+                $('#boutonPOST').on('click', function ()
+                    {
+                        $.post('{{ path("armesPrestiges") }}',
+                                function (data)
+                                    {
+                                        $('#cible').html(data);
+                                    });
+                    });
+
+                $('#listeProduitsJSON').on('click', function ()
+                    {
+                        
+                        $.getJSON("{{ path('ajax_lister_json') }}", function (data)
+                            {
+                                var html = "";
+                                for (cpt = 0; cpt < data.length; cpt++)
+                                {
+                                    html +=  data[cpt].titre +" "+ data[cpt].prix +" <br/>";
+                                }
+                                $('#cible').html(html);
+                            });
+                    });
+            });
+
+    </script>
+{% endblock %}
+
+{% block title %}Bienvenue{% endblock %}
+
+{% block header %}
+    <h1>Welcome Warsama !!</h1>
+{% endblock %}
+{% block body %}
+
+    <input type="button" onclick="javascript:clickBouton();" value="Cliquez ici">
+    <input type="button" id="boutonGET" value="Recup GET">
+    <input type="button" id="boutonPOST" value="Recup POST">
+    <input type="button" id="listeProduitsJSON" value="liste des Produits JSON">
+    <div id="cible">♥♥♥</div>
+    <br><br>
+    {{ form(monForm) }}
+{% endblock %}
